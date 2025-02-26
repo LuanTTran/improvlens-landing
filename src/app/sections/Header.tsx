@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import GetTheAppButton from '@/app/components/GetTheAppButton';
+import appIcon from '@/asset/icons/appicon.svg';
 
 export default function Header() {
   return (
@@ -7,11 +9,11 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center">
           <Image 
-            src="/logo.svg" 
+            src={appIcon}
             alt="ImprovLens Logo" 
             width={40} 
             height={40} 
-            className="mr-2"
+            className="mr-2 rounded-full"
           />
           <span className="text-xl font-bold">ImprovLens</span>
         </div>
@@ -28,9 +30,7 @@ export default function Header() {
           </Link>
         </nav>
         
-        <Link href="#download" className="cta-button text-sm py-2 px-4">
-          Download
-        </Link>
+        <GetTheAppButton href="#download" />
       </div>
     </header>
   );

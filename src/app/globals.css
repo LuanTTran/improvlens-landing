@@ -6,14 +6,34 @@
   :root {
     --background: 240 33% 7%;
     --foreground: 0 0% 100%;
+    --card: 240 33% 11%;
+    --card-foreground: 0 0% 100%;
+    --popover: 240 33% 11%;
+    --popover-foreground: 0 0% 100%;
     --primary: 270 75% 47%;
     --primary-foreground: 0 0% 100%;
+    --secondary: 240 20% 20%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 20% 20%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 270 75% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 20% 20%;
+    --input: 240 20% 20%;
+    --ring: 270 75% 47%;
+    --radius: 0.5rem;
   }
 }
 
 @layer base {
+  * {
+    @apply border-border;
+  }
+  
   body {
-    @apply bg-[#0a0a1a] text-white antialiased;
+    @apply bg-background text-foreground antialiased;
   }
 }
 
@@ -27,7 +47,43 @@
   }
   
   .cta-button {
-    @apply bg-[#7e22ce] hover:bg-purple-700 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 flex items-center justify-center;
+    @apply bg-primary hover:bg-purple-700 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 flex items-center justify-center;
+  }
+}
+
+@keyframes gradient-xy {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@layer utilities {
+  .animate-gradient-xy {
+    animation: gradient-xy 3s ease infinite;
+    background-size: 200% 200%;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 }
 
