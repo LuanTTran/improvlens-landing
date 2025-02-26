@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import GlowingCard from '../components/GlowingCard';
 
 const features = [
   {
@@ -40,23 +40,15 @@ export default function Features() {
         </p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="flex flex-wrap justify-center gap-8">
         {features.map((feature, index) => (
-          <div 
+          <GlowingCard
             key={index}
-            className="bg-white/5 backdrop-blur-sm rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
-          >
-            <div className="mb-4 bg-purple-900/30 w-12 h-12 rounded-lg flex items-center justify-center">
-              <Image
-                src={feature.icon}
-                alt={feature.title}
-                width={24}
-                height={24}
-              />
-            </div>
-            <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-            <p className="text-gray-300">{feature.description}</p>
-          </div>
+            title={feature.title}
+            description={feature.description}
+            icon={feature.icon}
+            imageIndex={index}
+          />
         ))}
       </div>
     </section>
