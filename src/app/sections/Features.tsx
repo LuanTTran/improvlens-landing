@@ -3,28 +3,23 @@ import GlowingCard from '../components/GlowingCard';
 const features = [
   {
     title: "Seamless Event Photo Management",
-    description: "Create events in seconds and easily manage all photos in one place.",
-    icon: "/icons/event-icon.svg"
+    description: "Create events in seconds and easily manage all photos in one place."
   },
   {
     title: "User-Friendly Guest Participation",
-    description: "Guests can join with a simple code and contribute photos instantly.",
-    icon: "/icons/guest-icon.svg"
+    description: "Guests can join with a simple code and contribute photos instantly."
   },
   {
     title: "Powerful Host Control",
-    description: "Full control over your event photos with curation and approval features.",
-    icon: "/icons/control-icon.svg"
+    description: "Full control over your event photos with curation and approval features."
   },
   {
     title: "Convenient Photo Sharing and Access",
-    description: "Share photos instantly with all guests or download the entire collection.",
-    icon: "/icons/share-icon.svg"
+    description: "Share photos instantly with all guests or download the entire collection."
   },
   {
     title: "Secure and Private Experience",
-    description: "Your photos stay private and secure, visible only to event participants.",
-    icon: "/icons/security-icon.svg"
+    description: "Your photos stay private and secure, visible only to event participants."
   }
 ];
 
@@ -46,7 +41,6 @@ export default function Features() {
             key={index}
             title={feature.title}
             description={feature.description}
-            icon={feature.icon}
             imageIndex={index}
           />
         ))}

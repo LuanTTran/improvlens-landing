@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode, useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 // Import the images directly
@@ -16,11 +16,10 @@ const cardImages = [Image1, Image2, Image3, Image4, Image5];
 interface GlowingCardProps {
   title: string;
   description: string;
-  icon: string;
   imageIndex?: number; // Optional index to specify image, will use random if not provided
 }
 
-export default function GlowingCard({ title, description, icon, imageIndex }: GlowingCardProps) {
+export default function GlowingCard({ title, description, imageIndex }: GlowingCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
